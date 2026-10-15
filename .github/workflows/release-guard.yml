@@ -1,0 +1,36 @@
+name: release-guard
+
+# Refuses release tags whose module files still point at local paths.
+# Development go.mod files carry `replace ... => ../` lines; a tagged
+# module containing them cannot be fetched by users.
+on:
+  push:
+    tags: ["v*", "redis/v*", "prometheus/v*"]
+
+permissions:
+  contents: read
+
+jobs:
+  no-local-replace:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: tagged module has no local replace directives
+        env:
+          TAG: ${{ github.ref_name }}
+        run: |
+          case "$TAG" in
+            redis/*) mod=redis/go.mod ;;
+            prometheus/*) mod=prometheus/go.mod ;;
+            *) mod=go.mod ;;
+          esac
+          if grep -nE '^\s*replace|=>\s*\.\.?/' "$mod"; then
+            echo "::error file=$mod::$mod contains local replace directives; see docs/release-checklist.md"
+            exit 1
+          fi
+          if grep -n 'v0.0.0-00010101000000-000000000000' "$mod"; then
+            echo "::error file=$mod::$mod requires an unpublished placeholder version"
+            exit 1
+          fi

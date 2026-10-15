@@ -1,0 +1,131 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+# Least privilege: CI only reads the repository.
+permissions:
+  contents: read
+
+jobs:
+  test:
+    strategy:
+      fail-fast: false
+      matrix:
+        go: ["1.26.x", "1.27.x"]
+    runs-on: ubuntu-latest
+    services:
+      redis:
+        image: redis:7.4-alpine
+        ports: ["6379:6379"]
+        options: >-
+          --health-cmd "redis-cli ping"
+          --health-interval 2s --health-timeout 2s --health-retries 20
+    env:
+      RATEGEN_REDIS_ADDR: 127.0.0.1:6379
+      # Use exactly the matrix toolchain, not the go.mod toolchain line.
+      GOTOOLCHAIN: local
+    steps:
+      # Actions are pinned to commit SHAs; Dependabot proposes updates.
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-go@b7ad1dad31e06c5925ef5d2fc7ad053ef454303e # v7.0.0
+        with:
+          go-version: ${{ matrix.go }}
+          check-latest: true
+          cache-dependency-path: "**/go.sum"
+      - name: gofmt
+        run: |
+          unformatted="$(gofmt -l .)"
+          if [ -n "$unformatted" ]; then echo "$unformatted"; exit 1; fi
+      - name: go.sum and go.mod are tidy
+        run: |
+          for m in . redis prometheus benchmarks; do
+            (cd "$m" && GOWORK=off go mod tidy && git diff --exit-code -- go.mod go.sum)
+          done
+      - name: vet and test with race detector (every module)
+        run: |
+          for m in . redis prometheus benchmarks; do
+            echo "::group::$m"
+            (cd "$m" && go vet ./... && go test -race -count=1 ./...)
+            echo "::endgroup::"
+          done
+      - name: staticcheck
+        run: |
+          for m in . redis prometheus benchmarks; do
+            (cd "$m" && go run honnef.co/go/tools/cmd/staticcheck@2026.1 ./...)
+          done
+      - name: govulncheck
+        run: |
+          for m in . redis prometheus; do
+            (cd "$m" && go run golang.org/x/vuln/cmd/govulncheck@v1.9.0 ./...)
+          done
+      - name: build examples
+        run: |
+          go build ./examples/...
+          (cd redis && go build ./examples/...)
+
+  redis-compat:
+    # The Redis integration tests against each supported server line.
+    strategy:
+      fail-fast: false
+      matrix:
+        image: ["redis:6.2-alpine", "redis:7.2-alpine", "redis:8.2-alpine", "valkey/valkey:8-alpine"]
+    runs-on: ubuntu-latest
+    services:
+      redis:
+        image: ${{ matrix.image }}
+        ports: ["6379:6379"]
+    env:
+      RATEGEN_REDIS_ADDR: 127.0.0.1:6379
+      GOTOOLCHAIN: local
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-go@b7ad1dad31e06c5925ef5d2fc7ad053ef454303e # v7.0.0
+        with:
+          go-version: "1.27.x"
+          check-latest: true
+          cache-dependency-path: "**/go.sum"
+      - name: integration tests
+        working-directory: redis
+        run: go test -race -count=1 ./...
+
+  redis-cluster:
+    runs-on: ubuntu-latest
+    env:
+      RATEGEN_REDIS_CLUSTER_ADDRS: 127.0.0.1:7000,127.0.0.1:7001,127.0.0.1:7002
+      GOTOOLCHAIN: local
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-go@b7ad1dad31e06c5925ef5d2fc7ad053ef454303e # v7.0.0
+        with:
+          go-version: "1.27.x"
+          check-latest: true
+          cache-dependency-path: "**/go.sum"
+      - name: start a three-node cluster
+        run: scripts/redis-cluster-up.sh
+      - name: cluster integration tests
+        working-directory: redis
+        run: go test -race -count=1 -run Cluster ./...
+
+  bench-smoke:
+    runs-on: ubuntu-latest
+    env:
+      GOTOOLCHAIN: local
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-go@b7ad1dad31e06c5925ef5d2fc7ad053ef454303e # v7.0.0
+        with:
+          go-version: "1.27.x"
+          check-latest: true
+      - name: run every benchmark once
+        run: go test -run=NONE -bench=. -benchtime=1x ./...
