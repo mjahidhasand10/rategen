@@ -1,0 +1,6 @@
+=== RUN   TestSoakRedis
+    soak_test.go:124: redis soak 3m0s: 620383 calls (3447/s), unique identities 193849, keys left 0
+    soak_test.go:126: latency p50 4.3849ms, p99 10.8001ms, p99.9 20.4261ms, max 27.7632ms
+--- PASS: TestSoakRedis (181.60s)
+PASS
+ok  	github.com/mjahidhasand10/rategen/redis	183.237s

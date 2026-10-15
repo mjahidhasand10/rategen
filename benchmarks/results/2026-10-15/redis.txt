@@ -1,0 +1,67 @@
+goos: windows
+goarch: amd64
+pkg: github.com/mjahidhasand10/rategen/redis
+cpu: AMD Ryzen 3 3250U with Radeon Graphics         
+BenchmarkRedis/ping-baseline-4         	     745	   1570005 ns/op	     249 B/op	       3 allocs/op
+BenchmarkRedis/ping-baseline-4         	     844	   1418330 ns/op	     148 B/op	       3 allocs/op
+BenchmarkRedis/ping-baseline-4         	     757	   1455403 ns/op	     148 B/op	       3 allocs/op
+BenchmarkRedis/ping-baseline-4         	     826	   1443555 ns/op	     148 B/op	       3 allocs/op
+BenchmarkRedis/ping-baseline-4         	     724	   1421023 ns/op	     148 B/op	       3 allocs/op
+BenchmarkRedis/ping-baseline-4         	     865	   1496305 ns/op	     148 B/op	       3 allocs/op
+BenchmarkRedis/token_bucket-4          	     651	   1543019 ns/op	    1257 B/op	      22 allocs/op
+BenchmarkRedis/token_bucket-4          	     814	   1502125 ns/op	    1256 B/op	      22 allocs/op
+BenchmarkRedis/token_bucket-4          	     831	   1468733 ns/op	    1256 B/op	      22 allocs/op
+BenchmarkRedis/token_bucket-4          	     832	   1514721 ns/op	    1256 B/op	      22 allocs/op
+BenchmarkRedis/token_bucket-4          	     834	   1507415 ns/op	    1256 B/op	      22 allocs/op
+BenchmarkRedis/token_bucket-4          	     814	   1535146 ns/op	    1256 B/op	      22 allocs/op
+BenchmarkRedis/token_bucket/parallel-4 	    2311	    506123 ns/op	    1257 B/op	      22 allocs/op
+BenchmarkRedis/token_bucket/parallel-4 	    2390	    554969 ns/op	    1257 B/op	      22 allocs/op
+BenchmarkRedis/token_bucket/parallel-4 	    2158	    563330 ns/op	    1257 B/op	      22 allocs/op
+BenchmarkRedis/token_bucket/parallel-4 	    2305	    533394 ns/op	    1256 B/op	      22 allocs/op
+BenchmarkRedis/token_bucket/parallel-4 	    2354	    547231 ns/op	    1257 B/op	      22 allocs/op
+BenchmarkRedis/token_bucket/parallel-4 	    2380	    514214 ns/op	    1257 B/op	      22 allocs/op
+BenchmarkRedis/gcra-4                  	     722	   1507668 ns/op	    1248 B/op	      21 allocs/op
+BenchmarkRedis/gcra-4                  	     807	   1479862 ns/op	    1248 B/op	      21 allocs/op
+BenchmarkRedis/gcra-4                  	     673	   1568158 ns/op	    1248 B/op	      21 allocs/op
+BenchmarkRedis/gcra-4                  	     852	   1502347 ns/op	    1248 B/op	      21 allocs/op
+BenchmarkRedis/gcra-4                  	     808	   1484754 ns/op	    1248 B/op	      21 allocs/op
+BenchmarkRedis/gcra-4                  	     726	   1534021 ns/op	    1248 B/op	      21 allocs/op
+BenchmarkRedis/gcra/parallel-4         	    2410	    539300 ns/op	    1249 B/op	      21 allocs/op
+BenchmarkRedis/gcra/parallel-4         	    2296	    546492 ns/op	    1248 B/op	      21 allocs/op
+BenchmarkRedis/gcra/parallel-4         	    2421	    513059 ns/op	    1248 B/op	      21 allocs/op
+BenchmarkRedis/gcra/parallel-4         	    2365	    544557 ns/op	    1248 B/op	      21 allocs/op
+BenchmarkRedis/gcra/parallel-4         	    2382	    535930 ns/op	    1248 B/op	      21 allocs/op
+BenchmarkRedis/gcra/parallel-4         	    2252	    523489 ns/op	    1249 B/op	      21 allocs/op
+BenchmarkRedis/fixed_window-4          	     840	   1491145 ns/op	    1272 B/op	      24 allocs/op
+BenchmarkRedis/fixed_window-4          	     838	   1444885 ns/op	    1272 B/op	      24 allocs/op
+BenchmarkRedis/fixed_window-4          	     794	   1547820 ns/op	    1272 B/op	      24 allocs/op
+BenchmarkRedis/fixed_window-4          	     812	   1434654 ns/op	    1272 B/op	      24 allocs/op
+BenchmarkRedis/fixed_window-4          	     798	   1497581 ns/op	    1272 B/op	      24 allocs/op
+BenchmarkRedis/fixed_window-4          	     631	   1779641 ns/op	    1273 B/op	      24 allocs/op
+BenchmarkRedis/fixed_window/parallel-4 	    1971	    527038 ns/op	    1273 B/op	      24 allocs/op
+BenchmarkRedis/fixed_window/parallel-4 	    2326	    530625 ns/op	    1274 B/op	      24 allocs/op
+BenchmarkRedis/fixed_window/parallel-4 	    2356	    529931 ns/op	    1272 B/op	      24 allocs/op
+BenchmarkRedis/fixed_window/parallel-4 	    2344	    541051 ns/op	    1273 B/op	      24 allocs/op
+BenchmarkRedis/fixed_window/parallel-4 	    2332	    534298 ns/op	    1273 B/op	      24 allocs/op
+BenchmarkRedis/fixed_window/parallel-4 	    2282	    537327 ns/op	    1273 B/op	      24 allocs/op
+BenchmarkRedis/sliding_window-4        	     796	   1521001 ns/op	    1272 B/op	      24 allocs/op
+BenchmarkRedis/sliding_window-4        	     829	   1484494 ns/op	    1272 B/op	      24 allocs/op
+BenchmarkRedis/sliding_window-4        	     885	   1500836 ns/op	    1272 B/op	      24 allocs/op
+BenchmarkRedis/sliding_window-4        	     777	   1569756 ns/op	    1272 B/op	      24 allocs/op
+BenchmarkRedis/sliding_window-4        	     771	   1602626 ns/op	    1272 B/op	      24 allocs/op
+BenchmarkRedis/sliding_window-4        	     787	   1530841 ns/op	    1272 B/op	      24 allocs/op
+BenchmarkRedis/sliding_window/parallel-4         	    2286	    566161 ns/op	    1273 B/op	      24 allocs/op
+BenchmarkRedis/sliding_window/parallel-4         	    1958	    551362 ns/op	    1273 B/op	      24 allocs/op
+BenchmarkRedis/sliding_window/parallel-4         	    2294	    531589 ns/op	    1273 B/op	      24 allocs/op
+BenchmarkRedis/sliding_window/parallel-4         	    2311	    549971 ns/op	    1272 B/op	      24 allocs/op
+BenchmarkRedis/sliding_window/parallel-4         	    2317	    515820 ns/op	    1273 B/op	      24 allocs/op
+BenchmarkRedis/sliding_window/parallel-4         	    2319	    547825 ns/op	    1272 B/op	      24 allocs/op
+BenchmarkRedis/batch2-4                          	     782	   1514786 ns/op	    1968 B/op	      31 allocs/op
+BenchmarkRedis/batch2-4                          	     770	   1567668 ns/op	    1968 B/op	      31 allocs/op
+BenchmarkRedis/batch2-4                          	     814	   1545154 ns/op	    1968 B/op	      31 allocs/op
+BenchmarkRedis/batch2-4                          	     793	   1505051 ns/op	    1968 B/op	      31 allocs/op
+BenchmarkRedis/batch2-4                          	     807	   1556882 ns/op	    1968 B/op	      31 allocs/op
+BenchmarkRedis/batch2-4                          	     818	   1659479 ns/op	    1968 B/op	      31 allocs/op
+PASS
+ok  	github.com/mjahidhasand10/rategen/redis	75.690s
+?   	github.com/mjahidhasand10/rategen/redis/examples/distributed	[no test files]

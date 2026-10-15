@@ -1,0 +1,144 @@
+goos: windows
+goarch: amd64
+pkg: github.com/mjahidhasand10/rategen/memory
+cpu: AMD Ryzen 3 3250U with Radeon Graphics         
+BenchmarkAllow/token_bucket-4         	 4080499	       275.3 ns/op	       0 B/op	       0 allocs/op
+BenchmarkAllow/token_bucket-4         	 4160536	       304.4 ns/op	       0 B/op	       0 allocs/op
+BenchmarkAllow/token_bucket-4         	 4170057	       313.0 ns/op	       0 B/op	       0 allocs/op
+BenchmarkAllow/token_bucket-4         	 3795776	       302.0 ns/op	       0 B/op	       0 allocs/op
+BenchmarkAllow/token_bucket-4         	 5333022	       272.6 ns/op	       0 B/op	       0 allocs/op
+BenchmarkAllow/token_bucket-4         	 4615468	       260.7 ns/op	       0 B/op	       0 allocs/op
+BenchmarkAllow/gcra-4                 	 3893672	       278.4 ns/op	       0 B/op	       0 allocs/op
+BenchmarkAllow/gcra-4                 	 4881574	       262.0 ns/op	       0 B/op	       0 allocs/op
+BenchmarkAllow/gcra-4                 	 4452927	       249.3 ns/op	       0 B/op	       0 allocs/op
+BenchmarkAllow/gcra-4                 	 4986315	       249.1 ns/op	       0 B/op	       0 allocs/op
+BenchmarkAllow/gcra-4                 	 5086476	       242.9 ns/op	       0 B/op	       0 allocs/op
+BenchmarkAllow/gcra-4                 	 5041534	       244.2 ns/op	       0 B/op	       0 allocs/op
+BenchmarkAllow/fixed_window-4         	 5525930	       219.3 ns/op	       0 B/op	       0 allocs/op
+BenchmarkAllow/fixed_window-4         	 5656238	       219.5 ns/op	       0 B/op	       0 allocs/op
+BenchmarkAllow/fixed_window-4         	 5571012	       207.5 ns/op	       0 B/op	       0 allocs/op
+BenchmarkAllow/fixed_window-4         	 4985088	       216.5 ns/op	       0 B/op	       0 allocs/op
+BenchmarkAllow/fixed_window-4         	 5172786	       209.4 ns/op	       0 B/op	       0 allocs/op
+BenchmarkAllow/fixed_window-4         	 5289325	       210.4 ns/op	       0 B/op	       0 allocs/op
+BenchmarkAllow/sliding_window-4       	 5242172	       235.3 ns/op	       0 B/op	       0 allocs/op
+BenchmarkAllow/sliding_window-4       	 5271399	       230.5 ns/op	       0 B/op	       0 allocs/op
+BenchmarkAllow/sliding_window-4       	 4993833	       234.9 ns/op	       0 B/op	       0 allocs/op
+BenchmarkAllow/sliding_window-4       	 5189792	       235.5 ns/op	       0 B/op	       0 allocs/op
+BenchmarkAllow/sliding_window-4       	 5209339	       238.8 ns/op	       0 B/op	       0 allocs/op
+BenchmarkAllow/sliding_window-4       	 5040288	       236.4 ns/op	       0 B/op	       0 allocs/op
+BenchmarkReject/gcra-4                	 4308957	       247.7 ns/op	       0 B/op	       0 allocs/op
+BenchmarkReject/gcra-4                	 5099443	       240.1 ns/op	       0 B/op	       0 allocs/op
+BenchmarkReject/gcra-4                	 4751829	       237.6 ns/op	       0 B/op	       0 allocs/op
+BenchmarkReject/gcra-4                	 4838953	       245.5 ns/op	       0 B/op	       0 allocs/op
+BenchmarkReject/gcra-4                	 5283648	       234.0 ns/op	       0 B/op	       0 allocs/op
+BenchmarkReject/gcra-4                	 5093540	       241.4 ns/op	       0 B/op	       0 allocs/op
+BenchmarkReject/fixed_window-4        	 5712362	       206.2 ns/op	       0 B/op	       0 allocs/op
+BenchmarkReject/fixed_window-4        	 5765762	       218.0 ns/op	       0 B/op	       0 allocs/op
+BenchmarkReject/fixed_window-4        	 5779978	       214.6 ns/op	       0 B/op	       0 allocs/op
+BenchmarkReject/fixed_window-4        	 4798958	       218.5 ns/op	       0 B/op	       0 allocs/op
+BenchmarkReject/fixed_window-4        	 5959276	       210.8 ns/op	       0 B/op	       0 allocs/op
+BenchmarkReject/fixed_window-4        	 5112025	       209.9 ns/op	       0 B/op	       0 allocs/op
+BenchmarkReject/sliding_window-4      	 4270338	       283.4 ns/op	       0 B/op	       0 allocs/op
+BenchmarkReject/sliding_window-4      	 4304793	       290.4 ns/op	       0 B/op	       0 allocs/op
+BenchmarkReject/sliding_window-4      	 4095489	       296.8 ns/op	       0 B/op	       0 allocs/op
+BenchmarkReject/sliding_window-4      	 4493536	       273.8 ns/op	       0 B/op	       0 allocs/op
+BenchmarkReject/sliding_window-4      	 4233366	       287.6 ns/op	       0 B/op	       0 allocs/op
+BenchmarkReject/sliding_window-4      	 4354706	       278.2 ns/op	       0 B/op	       0 allocs/op
+BenchmarkReject/token_bucket-4        	 4550984	       231.2 ns/op	       0 B/op	       0 allocs/op
+BenchmarkReject/token_bucket-4        	 5502572	       238.4 ns/op	       0 B/op	       0 allocs/op
+BenchmarkReject/token_bucket-4        	 5159775	       221.9 ns/op	       0 B/op	       0 allocs/op
+BenchmarkReject/token_bucket-4        	 5665088	       232.5 ns/op	       0 B/op	       0 allocs/op
+BenchmarkReject/token_bucket-4        	 5438324	       223.1 ns/op	       0 B/op	       0 allocs/op
+BenchmarkReject/token_bucket-4        	 5482706	       230.9 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContendedKey/fixed_window-4  	 2956387	       386.8 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContendedKey/fixed_window-4  	 3187147	       374.4 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContendedKey/fixed_window-4  	 3045658	       374.2 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContendedKey/fixed_window-4  	 3203764	       378.7 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContendedKey/fixed_window-4  	 3185535	       381.9 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContendedKey/fixed_window-4  	 3204609	       410.7 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContendedKey/sliding_window-4         	 2348487	       439.2 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContendedKey/sliding_window-4         	 2747317	       435.2 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContendedKey/sliding_window-4         	 2846713	       428.4 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContendedKey/sliding_window-4         	 2777121	       428.4 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContendedKey/sliding_window-4         	 2786778	       425.7 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContendedKey/sliding_window-4         	 2778841	       436.3 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContendedKey/token_bucket-4           	 2596990	       421.3 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContendedKey/token_bucket-4           	 3007329	       395.4 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContendedKey/token_bucket-4           	 3027968	       404.8 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContendedKey/token_bucket-4           	 3031873	       403.6 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContendedKey/token_bucket-4           	 3020660	       412.9 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContendedKey/token_bucket-4           	 2985852	       395.9 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContendedKey/gcra-4                   	 2916763	       409.3 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContendedKey/gcra-4                   	 2977652	       408.6 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContendedKey/gcra-4                   	 2955586	       409.1 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContendedKey/gcra-4                   	 3010600	       403.7 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContendedKey/gcra-4                   	 2868060	       406.2 ns/op	       0 B/op	       0 allocs/op
+BenchmarkContendedKey/gcra-4                   	 2904693	       412.1 ns/op	       0 B/op	       0 allocs/op
+BenchmarkIndependentKeys-4                     	10493922	       119.3 ns/op	       0 B/op	       0 allocs/op
+BenchmarkIndependentKeys-4                     	10532065	       113.3 ns/op	       0 B/op	       0 allocs/op
+BenchmarkIndependentKeys-4                     	10403925	       161.1 ns/op	       0 B/op	       0 allocs/op
+BenchmarkIndependentKeys-4                     	 9984199	       126.6 ns/op	       0 B/op	       0 allocs/op
+BenchmarkIndependentKeys-4                     	 8396157	       126.4 ns/op	       0 B/op	       0 allocs/op
+BenchmarkIndependentKeys-4                     	10208308	       117.9 ns/op	       0 B/op	       0 allocs/op
+BenchmarkHighCardinality-4                     	 1000000	      1100 ns/op	    100000 keys	     100 B/op	       1 allocs/op
+BenchmarkHighCardinality-4                     	 1000000	      1089 ns/op	    100000 keys	     100 B/op	       1 allocs/op
+BenchmarkHighCardinality-4                     	 1000000	      1080 ns/op	    100000 keys	     100 B/op	       1 allocs/op
+BenchmarkHighCardinality-4                     	 1000000	      1124 ns/op	    100000 keys	     100 B/op	       1 allocs/op
+BenchmarkHighCardinality-4                     	 1000000	      1086 ns/op	    100000 keys	     100 B/op	       1 allocs/op
+BenchmarkHighCardinality-4                     	 1000000	      1100 ns/op	    100000 keys	     100 B/op	       1 allocs/op
+BenchmarkBatch-4                               	 1000000	      1054 ns/op	     448 B/op	       3 allocs/op
+BenchmarkBatch-4                               	 1000000	      1056 ns/op	     448 B/op	       3 allocs/op
+BenchmarkBatch-4                               	 1207287	      1012 ns/op	     448 B/op	       3 allocs/op
+BenchmarkBatch-4                               	 1153783	      1037 ns/op	     448 B/op	       3 allocs/op
+BenchmarkBatch-4                               	 1225603	       998.0 ns/op	     448 B/op	       3 allocs/op
+BenchmarkBatch-4                               	 1174662	      1015 ns/op	     448 B/op	       3 allocs/op
+PASS
+ok  	github.com/mjahidhasand10/rategen/memory	121.602s
+goos: windows
+goarch: amd64
+pkg: github.com/mjahidhasand10/rategen/tokenbucket
+cpu: AMD Ryzen 3 3250U with Radeon Graphics         
+BenchmarkAllow-4           	10588545	       133.9 ns/op	       0 B/op	       0 allocs/op
+BenchmarkAllow-4           	 8491204	       145.2 ns/op	       0 B/op	       0 allocs/op
+BenchmarkAllow-4           	 8196748	       150.1 ns/op	       0 B/op	       0 allocs/op
+BenchmarkAllow-4           	 7869274	       140.3 ns/op	       0 B/op	       0 allocs/op
+BenchmarkAllow-4           	11203936	       109.1 ns/op	       0 B/op	       0 allocs/op
+BenchmarkAllow-4           	11789660	       112.6 ns/op	       0 B/op	       0 allocs/op
+BenchmarkAllowReject-4     	 8593070	       140.3 ns/op	       0 B/op	       0 allocs/op
+BenchmarkAllowReject-4     	 8232490	       142.4 ns/op	       0 B/op	       0 allocs/op
+BenchmarkAllowReject-4     	 8602291	       142.8 ns/op	       0 B/op	       0 allocs/op
+BenchmarkAllowReject-4     	 6970231	       153.9 ns/op	       0 B/op	       0 allocs/op
+BenchmarkAllowReject-4     	 7657818	       148.9 ns/op	       0 B/op	       0 allocs/op
+BenchmarkAllowReject-4     	 9038437	       135.6 ns/op	       0 B/op	       0 allocs/op
+BenchmarkAllowParallel-4   	 5946195	       223.1 ns/op	       0 B/op	       0 allocs/op
+BenchmarkAllowParallel-4   	 5429043	       221.0 ns/op	       0 B/op	       0 allocs/op
+BenchmarkAllowParallel-4   	 5405360	       219.0 ns/op	       0 B/op	       0 allocs/op
+BenchmarkAllowParallel-4   	 5411491	       221.7 ns/op	       0 B/op	       0 allocs/op
+BenchmarkAllowParallel-4   	 5387703	       222.4 ns/op	       0 B/op	       0 allocs/op
+BenchmarkAllowParallel-4   	 5282368	       220.1 ns/op	       0 B/op	       0 allocs/op
+PASS
+ok  	github.com/mjahidhasand10/rategen/tokenbucket	23.500s
+goos: windows
+goarch: amd64
+pkg: github.com/mjahidhasand10/rategen/httplimit
+cpu: AMD Ryzen 3 3250U with Radeon Graphics         
+BenchmarkMiddleware/baseline-4         	124215950	        10.30 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMiddleware/baseline-4         	88602080	        12.10 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMiddleware/baseline-4         	100000000	        13.64 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMiddleware/baseline-4         	93033351	        13.49 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMiddleware/baseline-4         	88185364	        12.24 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMiddleware/baseline-4         	135295005	         8.749 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMiddleware/limited-4          	 1534033	       785.7 ns/op	     160 B/op	       4 allocs/op
+BenchmarkMiddleware/limited-4          	 1470753	       799.4 ns/op	     160 B/op	       4 allocs/op
+BenchmarkMiddleware/limited-4          	 1500098	       836.5 ns/op	     160 B/op	       4 allocs/op
+BenchmarkMiddleware/limited-4          	 1502709	       800.9 ns/op	     160 B/op	       4 allocs/op
+BenchmarkMiddleware/limited-4          	 1462215	       813.2 ns/op	     160 B/op	       4 allocs/op
+BenchmarkMiddleware/limited-4          	 1546104	       785.3 ns/op	     160 B/op	       4 allocs/op
+BenchmarkMiddleware/limited+draft-headers-4         	  846391	      1414 ns/op	     248 B/op	       8 allocs/op
+BenchmarkMiddleware/limited+draft-headers-4         	  864650	      1374 ns/op	     248 B/op	       8 allocs/op
+BenchmarkMiddleware/limited+draft-headers-4         	  861220	      1411 ns/op	     248 B/op	       8 allocs/op
+BenchmarkMiddleware/limited+draft-headers-4         	  993442	      1311 ns/op	     248 B/op	       8 allocs/op
+BenchmarkMiddleware/limited+draft-headers-4         	 1000000	      3968 ns/op	     248 B/op	       8 allocs/op
+BenchmarkMiddleware/limited+draft-headers-4         	 1000000	      1318 ns/op	     248 B/op	       8 allocs/op
+PASS
+ok  	github.com/mjahidhasand10/rategen/httplimit	25.426s

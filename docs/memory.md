@@ -23,7 +23,7 @@
 Each `(policy, key)` pair holds one entry: the key string, the algorithm
 state and LRU links, plus Go map overhead. In the high-cardinality
 benchmark, which inserts new keys into a full 100k-key store, each insertion
-allocates about 96 bytes besides the key string itself
+allocates about 100 bytes besides the key string itself
 ([benchmarks.md](benchmarks.md)). Measure under your
 own workload.
 

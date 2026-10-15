@@ -1,0 +1,6 @@
+=== RUN   TestSoak
+    soak_test.go:153: soak 5m0s: 55742868 requests (185810/s), 13810337 rejected, keys 49999, evictions 41646823, expired 109790
+    soak_test.go:155: latency p50 0s, p99 553.4µs, p99.9 9.5527ms, max 15.9282ms; heap samples (MiB) [14 19 19 20 19 20 20 19 19 19 19 19 19 19 19 19 19 19 19 19]
+--- PASS: TestSoak (300.21s)
+PASS
+ok  	github.com/mjahidhasand10/rategen/httplimit	302.477s
