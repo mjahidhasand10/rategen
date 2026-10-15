@@ -1,0 +1,5 @@
+* text=auto eol=lf
+*.go text eol=lf
+*.lua text eol=lf
+*.sh text eol=lf
+*.ps1 text eol=crlf

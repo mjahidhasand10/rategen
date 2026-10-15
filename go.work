@@ -1,0 +1,10 @@
+go 1.26.0
+
+toolchain go1.26.9
+
+use (
+	.
+	./benchmarks
+	./prometheus
+	./redis
+)

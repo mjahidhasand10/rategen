@@ -1,0 +1,8 @@
+# Test and benchmark artifacts
+*.test
+*.out
+*.prof
+coverage.*
+/bin/
+# Local workspace overrides
+go.work.sum
